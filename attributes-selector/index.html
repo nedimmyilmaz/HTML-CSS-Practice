@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Attributes Selector</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Attribute Seçiciler</h1>
+	<p>Bu attribute i olmayan bir etiket</p>
+	<p  title="second"> p[title] title attribute u olan tüm p etieketlerini seçer</p>
+	
+	<p title="third paragraph">p[title ~= "paragraph"] paragraph kelimesi ile başlayan tüm p etiketlerini seçer</p>
+	<p title="forth paragraph">p[title =#4 paragraph"]</p>
+	
+	<p>
+		<a href="https://asasd.net" target="blank">Örnek 1 	</a><a href="https://asdad.net"> Örnek 2</a>
+		
+	</p>
+	<p>
+		<input type="text" name="Name">
+		<input type="button" value="Buton">
+	</p>
+	
+</body>
+</html>

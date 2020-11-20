@@ -1,0 +1,50 @@
+p:first-line{
+    font-weight: bold;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+}
+
+p.about:first-line{
+    color: blue;
+}
+p:first-letter{
+    font-size: 48px;
+}
+
+div:first-line {
+    color: chartreuse;
+}
+
+ul li:first-child{
+    
+}
+
+ul li:last-child{
+   
+}
+
+ul li:nth-of-type(even){
+    background-color: lightgray;
+}
+
+ul li:nth-of-type(odd){
+   background-color: gray;
+}
+
+a{
+    display: block;
+}
+a:link{
+    color: red;
+}
+a:visited{
+    color: gray;
+}
+a:hover{
+    color:white;
+    background: green;
+}
+a:active{
+    color: green;
+    background-color: gold;
+}

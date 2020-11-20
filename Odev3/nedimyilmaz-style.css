@@ -1,0 +1,112 @@
+
+body{ /* <body> font-size ve background #f2f2f2 */
+	font-size: 14px;
+background:#f2f2f2;
+
+}
+
+
+h1{  /* h1 etiketine gray border ve padding 5px ekleyin  */
+	border: 2px solid;
+	border-color: gray;
+	padding: 5px;
+}
+
+
+h2{ /* h2 etiketlerinden sınıfı active olana yeşil border ekle */
+	color: red;
+}
+
+
+h2.active{ /* h2 etiketlerinden sınıfı active olana yeşil border ekle */
+	border: 2px solid green;
+}
+
+
+#paragraf{ /* paragraf id'sine sahip olan etikete font kalınlığı verin*/
+	font-weight: bold ;
+}
+
+
+div h3{ /* div içindeki h3 etiketlerine gold arkaplan ekle */ 
+	background-color: gold;
+}
+
+
+h1 ~ p{ /*h1 den sonra gelen aynı seviyedeki tüm p arkaplan red olsun  */
+	background-color: red;
+}
+
+
+div p{ /*div içindeki tüm p etiketlerinin arka planını yeşil yapın  */
+	background-color: greenyellow;
+}
+
+
+li{ /*Tüm liste elemanlarına gray border ve margin-top:2px ekleyin.*/
+	border: 2px solid gray;
+	margin-top: 2px;
+}
+
+
+.active{ /* active sınıfına sahip tüm elemanlara gold arkaplan ekleyin..*/
+	background-color: gold;
+}
+
+
+li:first-child{ /* liste elemanlarından ilkinin kelime aralığını arttır */
+	word-spacing: 20px;
+}
+
+
+li:last-child{ /* liste elemanlarından en sondakinin harf aralığını arttır */
+	word-spacing: 20px;
+}
+
+
+ul li:nth-of-type(odd){ /* liste eleman index i tek olanların yazı rengini yeşil */
+	color: green;
+}
+
+
+ul li:nth-of-type(even){ /* liste eleman index i çift olanların yazı rengini turuncu */
+	color: orange;
+}
+
+
+input[type="text"]{ /*input nesnelerinden text ve password olanlara aşağıdaki css kodlarını uygulayın. */
+	width: 100%
+	padding 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+
+input[type="submit"]{ /*input nesnelerinden type i submit olana aşağıdaki css kodlarını uygulayın.*/
+	  width: 100%;
+    background-color: green;
+    color: white;
+    padding: 12px 18px;
+    margin: 7px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type="submit"]:hover{ /*submit butonuna hover olayı gerçekleştirğinde arkaplan rengini #45a049 yapınız */
+	background-color: #45a049;
+	
+} 
+
+
+input[type="submit"]:focus{ /*input kutularından type i submit olayanların focus olayı gerçekleştiğinde arkaplan renklerini lightgoldenrodyellow yapın. */
+	
+	background-color: lightgoldenrodyellow;
+}
+
+
+
+
+
+
