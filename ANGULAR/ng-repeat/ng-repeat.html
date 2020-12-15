@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="personelModul">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+        var app = angular.module("personelModul", []).controller("persCTRL", function($scope) {
+            var personeller = [{
+                isim: "AAA",
+                soyisim: "AAA Soyisim",
+                cinsiyet: "erkek",
+                maas: 2300
+            }, {
+                isim: "BBB",
+                soyisim: "BBB Soyisim",
+                cinsiyet: "kadın",
+                maas: 3000
+            }, {
+                isim: "CCC",
+                soyisim: "CCCSoyisim",
+                cinsiyet: "kadın",
+                maas: 4000
+            }, ];
+            $scope.personeller = personeller;
+
+
+        })
+    </script>
+
+
+</head>
+
+<body ng-controller="persCTRL">
+
+    <div>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>İsim</th>
+                    <th>Soyisim</th>
+                    <th>Cinsiyet</th>
+                    <th>Maas</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in personeller">
+                    <td>
+                        {{person.isim}}
+                    </td>
+                    <td>
+                        {{person.soyisim}}
+                    </td>
+                    <td>
+                        {{person.cinsiyet}}
+                    </td>
+                    <td>
+                        {{person.maas}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

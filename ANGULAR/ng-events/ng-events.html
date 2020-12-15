@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script>
+        var app = angular
+            .module("App", [])
+            .controller("eventCtrl", function($scope) {
+                var programlamaDilleri = [{
+                    adi: "Java",
+                    begen: 0,
+                    begenme: 0,
+                }, {
+                    adi: "C#",
+                    begen: 0,
+                    begenme: 0,
+                }, {
+                    adi: "Python",
+                    begen: 0,
+                    begenme: 0,
+                }, {
+                    adi: "AngularJS",
+                    begen: 0,
+                    begenme: 0,
+                }];
+                $scope.diller = programlamaDilleri;
+                $scope.begenArttir = function(dil) {
+                    dil.begen++;
+                }
+                $scope.begenmeArttir = function(dil) {
+                    dil.begenme++;
+                }
+            });
+    </script>
+</head>
+
+<body ng-controller="eventCtrl">
+    <table border="3">
+        <thead>
+            <tr>
+                <th>Dil Adı</th>
+
+                <th>Beğendi</th>
+                <th>Beğenmedi</th>
+                <th>Beğendi / Beğenmedi</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dil in diller">
+                <td>{{dil.adi}}</td>
+                <td>{{dil.begen}}</td>
+                <td>{{dil.begenme}}</td>
+                <td>
+                    <input type="button" value="Beğen" ng-click="begenArttir(dil)" />
+                    <input type="button" value="Beğenme" ng-click="begenmeArttir(dil)" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
