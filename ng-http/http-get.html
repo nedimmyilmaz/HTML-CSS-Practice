@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP_GET</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        table {
+            border: burlywood;
+            border-style: solid;
+        }
+        
+        th {
+            color: yellow;
+            background-color: black;
+            border-spacing: 10vh;
+        }
+        
+        td {
+            color: black;
+            background-color: rgb(185, 168, 168);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body ng-controller="controller">
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    İsim
+                </th>
+                <th>
+                    Soyisim
+                </th>
+                <th>
+                    Cinsiyet
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="p in personeller">
+                <td>{{p.isim}}</td>
+                <td>{{p.soyisim}}</td>
+                <td>{{p.maas}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+
+</html>

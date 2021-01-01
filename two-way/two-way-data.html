@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script>
+        var modul = angular
+            .module("app", [])
+            .controller("ctrl", function($scope) {
+                var uye = {
+                    isim: "Nedim",
+                    soyisim: "YILMAZ",
+                    dtarih: "01.01.9999",
+                    resim: "image/akali.jpg",
+                };
+                $scope.uye = uye;
+            });
+    </script>
+</head>
+
+<body ng-controller="ctrl">
+    <h1>NG-SRC</h1>
+    <div>
+        <ul list-style-type:>
+            <li>
+                <div>Adı: <input type="text" ng-model="uye.isim" /></div>
+            </li>
+            <li>
+                <div>Soyadı : <input type="text" ng-model="uye.soyisim" /></div>
+            </li>
+
+            <li>
+                <div>Doğum Tarihi : {{uye.dtarih}}</div>
+            </li>
+
+            <li>
+                <div>Değişen Ad: {{uye.isim}}</div>
+            </li>
+
+            <li>
+                <div>Resim yolu: <input type="text" value="{{uye.resim}}" /></div>
+            </li>
+
+            <div>
+                <img style="height: 300px; width: 500px" ng-src="{{uye.resim}}" alt="{{uye.isim}}" />
+            </div>
+
+            <li>
+                <div>
+                    Kadın <input type="radio" value="kadin" name="cinsiyet" /> Erkek
+                    <input type="radio" value="erkek" name="cinsiyet" />
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

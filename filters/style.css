@@ -1,0 +1,39 @@
+table {
+    color: #944b94;
+    border: 2px dashed #352135;
+    border-radius: 10px;
+    border-top: none;
+    width: 100%;
+    padding: 70px 10px 10px 10px;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+}
+
+#hint {
+    font-size: 20px;
+    color: #1e90ff;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+td:hover {
+    background-color: #a9a9a9;
+    color: black;
+    border-radius: 20px;
+}
+
+tr {
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+td {
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+th {
+    cursor: pointer;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous" />
+
+    <title>Sıralama Uygulaması</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular
+            .module("myApp", [])
+            .controller("controller", function($scope) {
+                var personeller = [{
+                    isim: "Adams",
+                    soyisim: "Sarabi",
+                    dogum: new Date(1968, 6, 15),
+                    maas: "3569",
+                }, {
+                    isim: "Baker",
+                    soyisim: "Kiara",
+                    dogum: new Date(1988, 7, 10),
+                    maas: "4143",
+                }, {
+                    isim: "Klein",
+                    soyisim: "Simba",
+                    dogum: new Date(1983, 6, 20),
+                    maas: "2705",
+                }, {
+                    isim: "Trott",
+                    soyisim: "Rafiki",
+                    dogum: new Date(1995, 4, 10),
+                    maas: "2337",
+                }, {
+                    isim: "Carl",
+                    soyisim: "Johnnson",
+                    dogum: new Date(1998, 6, 10),
+                    maas: "1883",
+                }, {
+                    isim: "Xiang",
+                    soyisim: "Shenzi",
+                    dogum: new Date(1988, 3, 30),
+                    maas: "3869",
+                }, ];
+                $scope.personeller = personeller;
+
+                $scope.sirala = function(x) {
+                    $scope.sort = x;
+                    $scope.reverse = !$scope.reverse;
+                };
+
+                /* --------------- ÇALIŞMADI------------------ */
+                //   $scope.$watch("goster", function () {
+                //     $scope.xxx = $scope.goster ? (
+                //       <i class="fas fa-sort-amount-up"> </i>
+                //     ) : (
+                //       <i class="fas fa-sort-amount-down"> </i>
+                //     );
+                //           ng-click="goster=!goster"
+                //   });
+            });
+    </script>
+
+    <style>
+        table {
+            color: #944b94;
+            border: 2px dashed #352135;
+            border-radius: 10px;
+            border-top: none;
+            width: 100%;
+            padding: 75px 10px 10px 10px;
+            text-align: center;
+            font-family: "Ubuntu", sans-serif;
+        }
+        
+        tr:nth-of-type(even) {
+            color: purple;
+            background-color: rgb(170, 184, 170);
+        }
+        
+        tr:hover {
+            color: #993cf3;
+        }
+        
+        #hint {
+            font-size: 20px;
+            color: #1e90ff;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        
+        tr {
+            padding: 10px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        td {
+            padding-top: 10px;
+            font-size: 20px;
+            font-weight: lighter;
+        }
+        
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hint">Sıralamayı değiştirmek için sütunlara tıklayın</div>
+    <div ng-controller="controller">
+        <!-- <div>
+            Filtrelemek için:
+            <select ng-model="sutunSirala">
+          <option value="isim">İsme göre</option>
+          <option value="+dogum">dogume göre</option>
+          <option value="+maas">Maas göre artan</option>
+          <option value="-maas">Maasa göre azalan</option>
+        </select>
+        </div> -->
+
+        <table id="table">
+            <thead class="thead">
+                <tr>
+                    <th ng-click="sirala('isim')">
+                        İsim
+
+                        <i class="fas fa-sort-amount-up"></i>
+                    </th>
+
+                    <th ng-click="sirala('soyisim')">
+                        Soyisim
+                        <i class="fas fa-sort-amount-up"> </i>
+                    </th>
+
+                    <th ng-click="sirala('dogum')">
+                        Doğum Tarihi
+                        <i class="fas fa-sort-amount-up"></i>
+                    </th>
+
+                    <th ng-click="sirala('maas')">
+                        Maas
+                        <i class="fas fa-sort-amount-up"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in personeller | orderBy: sort : reverse ">
+                    <td>{{p.isim}}</td>
+                    <td>{{p.soyisim}}</td>
+                    <td>{{p.dogum | date :"dd-MM-yyyy"}}</td>
+                    <td>{{p.maas| number : 2}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

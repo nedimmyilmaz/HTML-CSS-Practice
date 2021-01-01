@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+
+    <title>Sıralama Uygulaması</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular
+            .module("myApp", [])
+            .controller("controller", function($scope) {
+                var personeller = [{
+                    isim: "Adams",
+                    soyisim: "Sarabi",
+                    cinsiyet: "Erkek",
+                    maas: "3569",
+                }, {
+                    isim: "Baker",
+                    soyisim: "Kiara",
+                    cinsiyet: "Erkek",
+                    maas: "4143",
+                }, {
+                    isim: "Klein",
+                    soyisim: "Simba",
+                    cinsiyet: "Erkek",
+                    maas: "2705",
+                }, {
+                    isim: "Trott",
+                    soyisim: "Rafiki",
+                    cinsiyet: "Kadın",
+                    maas: "2337",
+                }, {
+                    isim: "Çağar",
+                    soyisim: "Alkan",
+                    cinsiyet: "Kadın",
+                    maas: "1883",
+                }, {
+                    isim: "Xiang",
+                    soyisim: "Shenzi",
+                    cinsiyet: "Kadın",
+                    maas: "3869",
+                }, ];
+                $scope.personeller = personeller;
+                $scope.sirala = function(i) {
+                    if ($scope.sutunSirala == i) {
+                        $scope.sutunSirala = "-" + i;
+                    } else $scope.sutunSirala = i;
+                };
+            });
+    </script>
+</head>
+
+<body style="background-color: #fff8dc">
+    <div id="hint">Sıralamayı değiştirmek için sütunlara tıklayın</div>
+    <div ng-controller="controller">
+        <!-- <div>
+            Filtrelemek için:
+            <select ng-model="sutunSirala">
+          <option value="isim">İsme göre</option>
+          <option value="+cinsiyet">Cinsiyete göre</option>
+          <option value="+maas">Maas göre artan</option>
+          <option value="-maas">Maasa göre azalan</option>
+        </select>
+        </div> -->
+
+        <table id="table">
+            <thead class="thead">
+                <tr>
+                    <th ng-click="sirala('isim')">
+                        İsim
+                        <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="40"
+                  height="38"
+                  viewBox="0 0 172 100"
+                  style="fill: #000000"
+                >
+                  <g transform="translate(13.76,13.76) scale(0.84,0.84)">
+                    <g
+                      fill="none"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <path
+                        d="M0,172v-172h172v172z"
+                        fill="none"
+                        stroke="none"
+                      ></path>
+                      <g stroke="none">
+                        <path
+                          d="M78.83333,96.75h14.33333v43h-14.33333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M60.91667,125.41667h50.16667l-25.08333,25.08333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M28.66667,82.41667v10.75l114.66667,0.00717v-10.75717h14.33333v10.75c0,7.90483 -6.4285,14.33333 -14.33333,14.33333h-114.66667c-7.90483,0 -14.33333,-6.4285 -14.33333,-14.33333v-10.75z"
+                          fill="#90caf9"
+                        ></path>
+                        <g fill="#448aff">
+                          <path
+                            d="M118.62267,46.58333l-29.03933,25.08333v-50.16667z"
+                          ></path>
+                          <path
+                            d="M53.75,39.41667h50.16667v14.33333h-50.16667z"
+                          ></path>
+                        </g>
+                      </g>
+                      <path d="" fill="none" stroke="none"></path>
+                      <path d="" fill="none" stroke="none"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+                    </th>
+                    <th ng-click="sirala('soyisim')">
+                        Soyisim
+                        <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="40"
+                  height="38"
+                  viewBox="0 0 172 100"
+                  style="fill: #683030"
+                >
+                  <g transform="translate(13.76,13.76) scale(0.84,0.84)">
+                    <g
+                      fill="none"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <path
+                        d="M0,172v-172h172v172z"
+                        fill="none"
+                        stroke="none"
+                      ></path>
+                      <g stroke="none">
+                        <path
+                          d="M78.83333,96.75h14.33333v43h-14.33333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M60.91667,125.41667h50.16667l-25.08333,25.08333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M28.66667,82.41667v10.75l114.66667,0.00717v-10.75717h14.33333v10.75c0,7.90483 -6.4285,14.33333 -14.33333,14.33333h-114.66667c-7.90483,0 -14.33333,-6.4285 -14.33333,-14.33333v-10.75z"
+                          fill="#90caf9"
+                        ></path>
+                        <g fill="#448aff">
+                          <path
+                            d="M118.62267,46.58333l-29.03933,25.08333v-50.16667z"
+                          ></path>
+                          <path
+                            d="M53.75,39.41667h50.16667v14.33333h-50.16667z"
+                          ></path>
+                        </g>
+                      </g>
+                      <path d="" fill="none" stroke="none"></path>
+                      <path d="" fill="none" stroke="none"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+                    </th>
+                    <th ng-click="sirala('cinsiyet')">
+                        Cinsiyet
+                        <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="40"
+                  height="38"
+                  viewBox="0 0 172 100"
+                  style="fill: #000000"
+                >
+                  <g transform="translate(13.76,13.76) scale(0.84,0.84)">
+                    <g
+                      fill="none"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <path
+                        d="M0,172v-172h172v172z"
+                        fill="none"
+                        stroke="none"
+                      ></path>
+                      <g stroke="none">
+                        <path
+                          d="M78.83333,96.75h14.33333v43h-14.33333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M60.91667,125.41667h50.16667l-25.08333,25.08333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M28.66667,82.41667v10.75l114.66667,0.00717v-10.75717h14.33333v10.75c0,7.90483 -6.4285,14.33333 -14.33333,14.33333h-114.66667c-7.90483,0 -14.33333,-6.4285 -14.33333,-14.33333v-10.75z"
+                          fill="#90caf9"
+                        ></path>
+                        <g fill="#448aff">
+                          <path
+                            d="M118.62267,46.58333l-29.03933,25.08333v-50.16667z"
+                          ></path>
+                          <path
+                            d="M53.75,39.41667h50.16667v14.33333h-50.16667z"
+                          ></path>
+                        </g>
+                      </g>
+                      <path d="" fill="none" stroke="none"></path>
+                      <path d="" fill="none" stroke="none"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+                    </th>
+                    <th ng-click="sirala('maas')">
+                        Maas
+                        <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="40"
+                  height="38"
+                  viewBox="0 0 172 100"
+                  style="fill: #000000"
+                >
+                  <g transform="translate(13.76,13.76) scale(0.84,0.84)">
+                    <g
+                      fill="none"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <path
+                        d="M0,172v-172h172v172z"
+                        fill="none"
+                        stroke="none"
+                      ></path>
+                      <g stroke="none">
+                        <path
+                          d="M78.83333,96.75h14.33333v43h-14.33333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M60.91667,125.41667h50.16667l-25.08333,25.08333z"
+                          fill="#3f51b5"
+                        ></path>
+                        <path
+                          d="M28.66667,82.41667v10.75l114.66667,0.00717v-10.75717h14.33333v10.75c0,7.90483 -6.4285,14.33333 -14.33333,14.33333h-114.66667c-7.90483,0 -14.33333,-6.4285 -14.33333,-14.33333v-10.75z"
+                          fill="#90caf9"
+                        ></path>
+                        <g fill="#448aff">
+                          <path
+                            d="M118.62267,46.58333l-29.03933,25.08333v-50.16667z"
+                          ></path>
+                          <path
+                            d="M53.75,39.41667h50.16667v14.33333h-50.16667z"
+                          ></path>
+                        </g>
+                      </g>
+                      <path d="" fill="none" stroke="none"></path>
+                      <path d="" fill="none" stroke="none"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in personeller | orderBy:sutunSirala">
+                    <td>{{p.isim}}</td>
+                    <td>{{p.soyisim}}</td>
+                    <td>{{p.cinsiyet}}</td>
+                    <td>{{p.maas}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

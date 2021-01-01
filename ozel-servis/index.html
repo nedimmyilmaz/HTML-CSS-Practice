@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ozelServis">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="controller">
+    <table>
+        <tr>
+            <td>Sayi 1</td>
+            <td> <input type="text" ng-model="sayi1"></td>
+
+            <td>Sayi 2</td>
+            <td> <input type="text" ng-model="sayi2"></td>
+        </tr>
+        <tr>
+            <td>
+                İslem seçin:
+            </td>
+            <td>
+                <select ng-model="option">
+                        <option value="+"> + </option>
+                        <option value="-"> - </option>
+                        <option value="*"> * </option>
+                        <option value="/"> / </option>
+
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Sonuç </td>
+            <td>{{sonuc}} </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="button" value="Hesapla" ng-click="Hesapla(sayi1,sayi2,option)"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

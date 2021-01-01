@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular
+            .module("module", [])
+            .controller("controller", function($scope) {
+                var personeller = [{
+                    isim: "AA",
+                    soyisim: "AASoy",
+                    cinsiyet: "Kadın"
+                }, {
+                    isim: "BB",
+                    soyisim: "BBSoy",
+                    cinsiyet: "Erkek"
+                }, {
+                    isim: "CC",
+                    soyisim: "CCSoy",
+                    cinsiyet: "Kadın"
+                }, {
+                    isim: "DD",
+                    soyisim: "DDSoy",
+                    cinsiyet: "Erkek"
+                }, {
+                    isim: "EE",
+                    soyisim: "EESoy",
+                    cinsiyet: "Erkek"
+                }, ];
+                $scope.personeller = personeller;
+                $scope.personelTablo = "personel-template.html"
+            });
+    </script>
+</head>
+
+<body ng-app="module">
+    <div ng-controller="controller">
+        <div ng-include="personelTablo">
+
+        </div>
+    </div>
+</body>
+
+</html>

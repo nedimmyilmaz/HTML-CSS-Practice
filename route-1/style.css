@@ -1,0 +1,60 @@
+.sayfa {
+    width: 960px;
+    margin: auto;
+}
+
+ul#yataymenu {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#yataymenu li {
+    float: left;
+}
+
+#yatayenu li a {
+    display: block;
+    background-color: beige;
+    height: 60px;
+    width: 135px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    transition: all .30s ease-in;
+    padding: 30px;
+}
+
+#yataymenu li a:hover {
+    color: burlywood;
+}
+
+.temizle {
+    clear: both;
+}
+
+.baslik {
+    width: 800px;
+    height: 80px;
+    text-align: center;
+    background-color: chocolate;
+    text-align: center;
+}
+
+.alt {
+    width: 800px;
+    height: 44px;
+    text-align: center;
+    background-color: chocolate;
+    text-align: center;
+}
+
+.orta {
+    height: 500px;
+    background-attachment: #742274;
+}
+
+a {
+    display: block;
+    padding: 12px;
+}

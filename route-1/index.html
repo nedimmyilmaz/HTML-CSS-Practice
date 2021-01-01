@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+
+<html lang="tr" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Route1</title>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="sayfa">
+        <div class="baslik">
+            <h1>Web Sayfası</h1>
+        </div>
+        <div ust="ust">
+            <ul id="yataymenu">
+                <li><a href="#/">Ana sayfa</a></li>
+                <li><a href="#/hakkimizda">Hakkımızda</a></li>
+                <li><a href="#/iletisim">İletişim</a></li>
+            </ul>
+        </div>
+        <div class="temizle"></div>
+        <div class="orta">
+            <ng-view></ng-view>
+        </div>
+        <div class="alt">
+            <h1>Sayfanın altı</h1>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr" ng-app="personelModul">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sıralama</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
+    <script>
+        var app = angular
+            .module("personelModul", []) 
+            .controller("controller", function($scope) {
+            var personeller = [{
+                isim: "Yezdan",
+                soyisim: "Erdurak",
+                cinsiyet: "Erkek",
+                maas: "3569",
+            }, {
+                isim: "Elfiye",
+                soyisim: "Şencin",
+                cinsiyet: "Erkek",
+                maas: "4143",
+            }, {
+                isim: "Ezfer",
+                soyisim: "Ovacık",
+                cinsiyet: "Erkek",
+                maas: "2705",
+            }, {
+                isim: "Teberhun",
+                soyisim: "Karadağ sazak",
+                cinsiyet: "Kadın",
+                maas: "2337",
+            }, {
+                isim: "Çağar",
+                soyisim: "Alkan",
+                cinsiyet: "Kadın",
+                maas: "1883",
+            }, {
+                isim: "Mükafi",
+                soyisim: "Düşer",
+                cinsiyet: "Kadın",
+                maas: "3869",
+            }, {
+                isim: "Süreha",
+                soyisim: "Karakaya",
+                cinsiyet: "Erkek",
+                maas: "1796",
+            }, {
+                isim: "Taberi",
+                soyisim: "Abacılı",
+                cinsiyet: "Kadın",
+                maas: "4054",
+            }, {
+                isim: "Bala",
+                soyisim: "Merkan",
+                cinsiyet: "Erkek",
+                maas: "2703",
+            }, {
+                isim: "Nil",
+                soyisim: "Aksaç",
+                cinsiyet: "Erkek",
+                maas: "3510",
+            }, {
+                isim: "Ulualp",
+                soyisim: "Seziş",
+                cinsiyet: "Erkek",
+                maas: "2688",
+            }, {
+                isim: "Çağlar",
+                soyisim: "Selçuk atay",
+                cinsiyet: "Erkek",
+                maas: "3524",
+            }, {
+                isim: "Berkem",
+                soyisim: "Erdoğan",
+                cinsiyet: "Kadın",
+                maas: "2290",
+            }, {
+                isim: "Özgünel",
+                soyisim: "Demirtaş",
+                cinsiyet: "Erkek",
+                maas: "3193",
+            }, {
+                isim: "Mübelliğ",
+                soyisim: "Ölçer",
+                cinsiyet: "Kadın",
+                maas: "3603",
+            }, {
+                isim: "Tuyuğ",
+                soyisim: "Aral kaplan",
+                cinsiyet: "Erkek",
+                maas: "2270",
+            }, {
+                isim: "Zafir",
+                soyisim: "Dingiz",
+                cinsiyet: "Erkek",
+                maas: "1880",
+            }, {
+                isim: "Gülnar",
+                soyisim: "Dinç",
+                cinsiyet: "Kadın",
+                maas: "1897",
+            }, {
+                isim: "Badegül",
+                soyisim: "Tekelioğlu",
+                cinsiyet: "Erkek",
+                maas: "3587",
+            }, {
+                isim: "Binalp",
+                soyisim: "İsen",
+                cinsiyet: "Kadın",
+                maas: "4334",
+            }, {
+                isim: "Ganiye",
+                soyisim: "Ekmekyapar",
+                cinsiyet: "Erkek",
+                maas: "2696",
+            }, {
+                isim: "Baykutay",
+                soyisim: "Karadeniz",
+                cinsiyet: "Erkek",
+                maas: "3882",
+            }, {
+                isim: "Safiye",
+                soyisim: "Muzoğlu",
+                cinsiyet: "Kadın",
+                maas: "4015",
+            }, {
+                isim: "Atınç",
+                soyisim: "Eroğlu",
+                cinsiyet: "Kadın",
+                maas: "3757",
+            }, {
+                isim: "Sanaç",
+                soyisim: "Yakıcı",
+                cinsiyet: "Erkek",
+                maas: "4088",
+            }, {
+                isim: "Mihrace",
+                soyisim: "Aytekin",
+                cinsiyet: "Erkek",
+                maas: "3524",
+            }, {
+                isim: "Paksu",
+                soyisim: "Savaşlı",
+                cinsiyet: "Erkek",
+                maas: "3686",
+            }, {
+                isim: "Sivar",
+                soyisim: "Dinler",
+                cinsiyet: "Erkek",
+                maas: "4493",
+            }, {
+                isim: "Ataergin",
+                soyisim: "Aker",
+                cinsiyet: "Erkek",
+                maas: "2922",
+            }, {
+                isim: "Emirkan",
+                soyisim: "Pamukbasanoğlu",
+                cinsiyet: "Erkek",
+                maas: "2665",
+            }, {
+                isim: "Aksun",
+                soyisim: "Karakoç",
+                cinsiyet: "Erkek",
+                maas: "3417",
+            }, {
+                isim: "Kamuran",
+                soyisim: "Uzunoğlu",
+                cinsiyet: "Erkek",
+                maas: "3389",
+            }, {
+                isim: "Burgaç",
+                soyisim: "Kazıcı",
+                cinsiyet: "Erkek",
+                maas: "2070",
+            }, {
+                isim: "Bargu",
+                soyisim: "Sandıkcı",
+                cinsiyet: "Erkek",
+                maas: "1988",
+            }, {
+                isim: "Han",
+                soyisim: "Güvendik",
+                cinsiyet: "Kadın",
+                maas: "2511",
+            }, ];
+            $scope.pers = personeller;
+
+            $scope.sirala = function(gelen) {
+                if ($scope.sutunSirala == gelen) {
+                    $scope.sutunSirala = "-" + gelen;
+                } else $scope.sutunSirala = gelen;
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div ng-controller="controller">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th ng-click="sirala('isim')">İsim</th>
+                    <th ng-click="sirala('soyisim')">Soyisim</th>
+                    <th ng-click="sirala('cinsiyet')">Cinsiyet</th>
+                    <th ng-click="sirala('maas')">Maas</th>
+                    <th>Maas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in pers | orderBy:sutunSirala">
+                    <td>{{p.isim | uppercase}}</td>
+                    <td>{{p.soyisim}}</td>
+                    <td>{{p.cinsiyet}}</td>
+                    <td>{{p.maas | currency : '₺' :1}}</td>
+                    <td>{{p.maas | number :2}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

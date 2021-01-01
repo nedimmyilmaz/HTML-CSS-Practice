@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="modul">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        http: //ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js
+    </script>
+
+    <script>
+        var modul = angular.module("modul", []).controller("controller", function($scope) {
+            var uye = {
+                isim: "Nedim",
+                dtarih: "01.01.9999",
+                resim: "ngsrc/image/akali.jpg"
+            };
+            $scope.uye = uye;
+        })
+    </script>
+</head>
+
+<body>
+    <h1>NG-SRC</h1>
+    <div ng-controller="controller">
+        <div>
+            Adı: {uye.isim}
+        </div>
+
+        <div>
+            Doğum Tarihi : {uye.dtarih}
+        </div>
+
+        <div>
+            <img src="{{uye.resim}}" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

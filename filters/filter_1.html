@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular
+            .module("app", [])
+            .controller("personelController", function($scope) {
+                var personeller = [{
+                    isim: "AA",
+                    soyisim: "AASoy",
+                    dogum: new Date(1999, 11, 29),
+                }, {
+                    isim: "BB",
+                    soyisim: "BBSoy",
+                    dogum: new Date(2000, 9, 8),
+                }, {
+                    isim: "CC",
+                    soyisim: "CCSoy",
+                    dogum: new Date(1999, 12, 12),
+                }, {
+                    isim: "DD",
+                    soyisim: "DDSoy",
+                    dogum: new Date(1889, 4, 19),
+                }, ];
+                $scope.pers = personeller;
+            });
+    </script>
+</head>
+
+<body ng-controller="personelController">
+    Gösterilecek satır sayısı: <input type="number" ng-model="satir" step="1" min="0" max="4" <table border="1">
+    <thead>
+        <tr>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            <th>Dogum</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in pers | limitTo:" satir ">
+            <td>{{p.isim | uppercase}}</td>
+            <td>{{p.soyisim}}</td>
+            <td>{{p.dogum | date:"dd-MM-yyyy "}}</td>
+        </tr>
+    </tbody>
+    </table>
+</body>
+
+</html>

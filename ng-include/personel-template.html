@@ -1,0 +1,31 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>
+                İsim
+            </th>
+            <th>
+                Soyisim
+            </th>
+            <th>
+                Cinsiyet
+            </th>
+
+        </tr>
+
+
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in personeller">
+            <td>
+                {{p.isim}}
+            </td>
+            <td>
+                {{p.soyisim}}
+            </td>
+            <td>
+                {{p.cinsiyet}}
+            </td>
+        </tr>
+    </tbody>
+</table>
