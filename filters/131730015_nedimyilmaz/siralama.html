@@ -2,6 +2,7 @@
 <html lang="en" ng-app="myApp">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous" />
 
     <title>Sıralama Uygulaması</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+
     <script>
         var app = angular
             .module("myApp", [])
@@ -48,20 +49,22 @@
                 }, ];
                 $scope.personeller = personeller;
 
+
+                var a = 1;
                 $scope.sirala = function(x) {
+
                     $scope.sort = x;
                     $scope.reverse = !$scope.reverse;
+                    $scope.goster = x;
+                    if (a == x) {
+                        $scope.xxx = 'fas fa-sort-amount-down';
+                        a = 1;
+                    } else {
+                        $scope.xxx = 'fas fa-sort-amount-up';
+                        a = x;
+                    }
                 };
 
-                /* --------------- ÇALIŞMADI------------------ */
-                //   $scope.$watch("goster", function () {
-                //     $scope.xxx = $scope.goster ? (
-                //       <i class="fas fa-sort-amount-up"> </i>
-                //     ) : (
-                //       <i class="fas fa-sort-amount-down"> </i>
-                //     );
-                //           ng-click="goster=!goster"
-                //   });
             });
     </script>
 
@@ -111,9 +114,9 @@
     </style>
 </head>
 
-<body>
+<body ng-controller="controller">
     <div id="hint">Sıralamayı değiştirmek için sütunlara tıklayın</div>
-    <div ng-controller="controller">
+    <div>
         <!-- <div>
             Filtrelemek için:
             <select ng-model="sutunSirala">
@@ -128,24 +131,21 @@
             <thead class="thead">
                 <tr>
                     <th ng-click="sirala('isim')">
-                        İsim
-
-                        <i class="fas fa-sort-amount-up"></i>
+                        İsim<i class="{{xxx}}" ng-show="goster=='isim'"> </i>
                     </th>
 
                     <th ng-click="sirala('soyisim')">
                         Soyisim
-                        <i class="fas fa-sort-amount-up"> </i>
+                        <i class="{{xxx}}" ng-show="goster=='soyisim'"> </i>
                     </th>
 
                     <th ng-click="sirala('dogum')">
-                        Doğum Tarihi
-                        <i class="fas fa-sort-amount-up"></i>
+                        Doğum Tarihi <i class="{{xxx}}" ng-show="goster=='dogum'"> </i>
                     </th>
 
                     <th ng-click="sirala('maas')">
                         Maas
-                        <i class="fas fa-sort-amount-up"></i>
+                        <i class="{{xxx}}" ng-show="goster=='maas'"> </i>
                     </th>
                 </tr>
             </thead>

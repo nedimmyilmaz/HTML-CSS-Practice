@@ -1,0 +1,16 @@
+{
+    "folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Downloads\\Compressed\\angular-20201230T090812Z-001\\angular\\controller"
+		},
+		{
+			"path": "..\\..\\..\\Downloads\\Compressed\\angular-20201230T090812Z-001\\angular\\filters"
+		}
+	],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "AngularJS"
+    }
+}
